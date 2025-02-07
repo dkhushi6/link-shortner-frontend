@@ -8,9 +8,12 @@ function Shortner() {
 
   const handleUrl = async () => {
     try {
-      const res = await axios.post("http://localhost:4006/shortner", {
-        longURL: longUrl,
-      });
+      const res = await axios.post(
+        "https://link-shortner-backend-a7or.onrender.com/shortner",
+        {
+          longURL: longUrl,
+        }
+      );
       console.log(res.data);
       setShortUrl(res.data.url);
     } catch (error) {

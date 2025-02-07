@@ -8,9 +8,12 @@ const Analytics = () => {
 
   const handleAnalytics = async () => {
     try {
-      const res = await axios.post("http://localhost:4006/analytics", {
-        shortUrl: fullUrl,
-      });
+      const res = await axios.post(
+        "https://link-shortner-backend-a7or.onrender.com/analytics",
+        {
+          shortUrl: fullUrl,
+        }
+      );
       console.log(res.data);
       setVisitor(res.data.visitors);
     } catch (error) {
